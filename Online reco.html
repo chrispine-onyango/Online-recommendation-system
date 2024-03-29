@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Reco.css">
+    <title>Recipes for you</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>ONLINE RECIPE SYSTEM</h1>
+<form id="recipeForm">
+    <label for="location">Our Locations:</label>
+    <select name="Location" id="Location">
+       <option value="Nairobi">Nairobi</option>
+       <option value="Kisumu">Kisumu</option>
+       <option value="Mombasa">Mombasa</option>
+       <option value="Eldoret">Eldoret</option> 
+       <option value="Nakuru">Nakuru</option>
+       <option value="Kakamega">Kakamega</option>
+    </select>    
+    <label for="time">Time for preparation:</label>
+    <select name="time" id="time">
+        <option value="quick">Quick</option>
+        <option value="medium">Medium</option>
+        <option value="elaborate">Elaborate</option>
+        <option value="Timely">Timely</option>
+        <option value="Slight delay">Slight delay</option>
+    </select><br>
+    <button type="submit">Get recipes</button>
+</form>
+</div>
+    
+</body>
+<script>
+    document.getElementById('recipeForm').addEventListener('submit',function(event){
+        event.preventDefault();
+        var location = document.getElementById('location').value;
+        var time = document.getElementById('time').value;
+        var message = 'Location:' + location + '<br>Time for  Preparation:' + time;
+        document.getElementById('recipeList').innerHTML = message;
+    })
+</script>
+</html>
